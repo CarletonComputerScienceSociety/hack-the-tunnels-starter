@@ -5,13 +5,16 @@ import { useAccountContext } from "../../context";
 import "./Login.style.scss";
 
 function Login() {
+  const [email, setEmail] = useState("email");
+  const [password, setPassword] = useState("password");
   const [message, setMessage] = useState(null);
+
   const { loggedIn, login } = useAccountContext();
   const navigate = useNavigate();
 
   const attemptLogin = async () => {
     try {
-      const message = await login("admin@email.com", "password");
+      const message = await login(email, password);
       setMessage(message);
     } catch (error) {
       console.log(error);
@@ -31,6 +34,15 @@ function Login() {
         <button onClick={() => attemptLogin()}>
           Login (as user set in code)
         </button>
+
+        <div>
+          <input placeholder="email" onChange={(e) => setEmail(e.target.value)} value={email}/>
+        </div>
+
+        <div>
+          <input placeholder="password" onChange={(e) => setPassword(e.target.value)} value={password}/>
+        </div>
+
         {message && <p>{message}</p>}
       </div>
     </Page>
