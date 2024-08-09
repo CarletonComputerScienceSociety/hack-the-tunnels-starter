@@ -18,12 +18,36 @@ function Login() {
 
   return (
     <Layout>
-      <div className="login-page">
-        <h1>Login</h1>
-        <button onClick={() => attemptLogin()}>
-          Login (as user set in code)
-        </button>
-        {message && <p>{message}</p>}
+      <div className="Login"></div>
+      <div className="Login__panel">
+        <div className="Login__panel__content">
+          <img src="/carleton_logo_black.png"></img>
+          <div className="Login__panel__content__message">
+            <div>Welcome to the Carleton SSO Federated Portal.</div>
+            <div>
+              Enter your{" "}
+              <a href="https://myone.carleton.ca" target="blank">
+                MyCarletonOne
+              </a>{" "}
+              username and password.
+            </div>
+          </div>
+          {message && <p>{message}</p>}
+          <div className="Login__panel__content__input">
+            <input type="text" placeholder="MyCarletonOne username"></input>
+            <input type="password" placeholder="Password"></input>
+          </div>
+          <div className="Login__panel__content__checkbox">
+            <input type="checkbox"></input>
+            <label>Keep me signed in</label>
+          </div>
+          <button
+            className="Login__panel__button"
+            onClick={() => attemptLogin()}
+          >
+            Sign In
+          </button>
+        </div>
       </div>
     </Layout>
   );

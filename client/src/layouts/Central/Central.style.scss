@@ -3,29 +3,23 @@
     height: 100vh;
     margin-left: 1%;
     margin-right: 2%;
+    font-style: normal;
+    font-family:
+      verdana,
+      arial narrow,
+      helvetica,
+      sans-serif;
 
     &__title {
-      color: black;
-      font-family:
-        verdana,
-        arial narrow,
-        helvetica,
-        sans-serif;
+      margin-top: 1.67rem;
+      margin-bottom: 1.5rem;
       font-weight: normal;
-      font-style: normal;
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
 
     &__footer {
-      color: black;
-      font-family:
-        verdana,
-        arial narrow,
-        helvetica,
-        sans-serif;
       font-weight: bold;
       font-size: 80%;
-      font-style: normal;
       text-align: left;
 
       &__release {

@@ -2,6 +2,8 @@ import { Base } from "@/layouts";
 import { Banner } from "./Banner";
 import "./Central.style.scss";
 import { Divider } from "./Divider";
+import { HeaderLinks } from "./HeaderLinks";
+import { Navigation } from "./Navigation";
 
 interface Props {
   title: string;
@@ -13,6 +15,8 @@ function Central({ title, children }: Props) {
     <Base>
       <Banner />
       <div className="Central__page">
+        <HeaderLinks />
+        <Navigation />
         <h2 className="Central__page__title">{title}</h2>
         <Divider />
         <div className="Central__page__content">{children}</div>
