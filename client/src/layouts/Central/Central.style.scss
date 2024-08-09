@@ -1,0 +1,40 @@
+.Central {
+  &__page {
+    height: 100vh;
+    margin-left: 1%;
+    margin-right: 2%;
+
+    &__title {
+      color: black;
+      font-family:
+        verdana,
+        arial narrow,
+        helvetica,
+        sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 1.5em;
+    }
+
+    &__footer {
+      color: black;
+      font-family:
+        verdana,
+        arial narrow,
+        helvetica,
+        sans-serif;
+      font-weight: bold;
+      font-size: 80%;
+      font-style: normal;
+      text-align: left;
+
+      &__release {
+        text-transform: uppercase;
+      }
+
+      &__copyright {
+        margin-top: 1.67rem;
+      }
+    }
+  }
+}
