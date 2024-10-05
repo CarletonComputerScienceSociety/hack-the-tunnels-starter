@@ -5,6 +5,7 @@ import { CookiesProvider, useCookies } from "react-cookie";
 // TODO: fix page central imports
 import { Login } from "@/pages/central/Login";
 import { Home } from "@/pages/central/Home";
+import { NotFound } from "@/pages/central/NotFound";
 import { AccountProvider } from "./context";
 import "./index.scss";
 
@@ -17,33 +18,9 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-  // {
-  //   path: "/admin",
-  //   element: <Admin />,
-  // },
-  // {
-  //   path: "/checkout/:productId",
-  //   element: <Checkout />,
-  // },
-  // {
-  //   path: "/login",
-  //   element: <Login />,
-  // },
-  // {
-  //   path: "/products/:id",
-  //   element: <Product />,
-  // },
-  // {
-  //   path: "/sign-up",
-  //   element: <SignUp />,
-  // },
-  // {
-  //   path: "/admin/create-product",
-  //   element: <CreateProduct />,
-  // },
   {
     path: "*",
-    element: <div>404</div>,
+    element: <NotFound />,
   },
 ]);
 
