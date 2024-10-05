@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Page } from "../../components";
+import { useState } from "react";
 import { useAccountContext } from "../../context";
+import { Base as Layout } from "@/layouts";
 import "./Login.style.scss";
 
 function Login() {
   const [message, setMessage] = useState(null);
-  const { loggedIn, login } = useAccountContext();
-  const navigate = useNavigate();
+  const { login } = useAccountContext();
 
   const attemptLogin = async () => {
     try {
@@ -18,22 +16,40 @@ function Login() {
     }
   };
 
-  useEffect(() => {
-    if (loggedIn() === true) {
-      navigate("/");
-    }
-  }, [loggedIn, navigate]);
-
   return (
-    <Page>
-      <div className="login-page">
-        <h1>Login</h1>
-        <button onClick={() => attemptLogin()}>
-          Login (as user set in code)
-        </button>
-        {message && <p>{message}</p>}
+    <Layout>
+      <div className="Login"></div>
+      <div className="Login__panel">
+        <div className="Login__panel__content">
+          <img src="/carleton_logo_black.png"></img>
+          <div className="Login__panel__content__message">
+            <div>Welcome to the Carleton SSO Federated Portal.</div>
+            <div>
+              Enter your{" "}
+              <a href="https://myone.carleton.ca" target="blank">
+                MyCarletonOne
+              </a>{" "}
+              username and password.
+            </div>
+          </div>
+          {message && <p>{message}</p>}
+          <div className="Login__panel__content__input">
+            <input type="text" placeholder="MyCarletonOne username"></input>
+            <input type="password" placeholder="Password"></input>
+          </div>
+          <div className="Login__panel__content__checkbox">
+            <input type="checkbox"></input>
+            <label>Keep me signed in</label>
+          </div>
+          <button
+            className="Login__panel__button"
+            onClick={() => attemptLogin()}
+          >
+            Sign In
+          </button>
+        </div>
       </div>
-    </Page>
+    </Layout>
   );
 }
 

@@ -2,10 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CookiesProvider, useCookies } from "react-cookie";
-// TODO: fix page central imports
-import { Login } from "@/pages/central/Login";
-import { Home } from "@/pages/central/Home";
-import { NotFound } from "@/pages/central/NotFound";
+import { Home, Login, NotFound } from "@/pages";
 import { AccountProvider } from "./context";
 import "./index.scss";
 
